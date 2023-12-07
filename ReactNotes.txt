@@ -1,4 +1,4 @@
-React- JS Library - Declarative (ReactDOM manipulates the code)
+React- JS Library - Declarative (ReactDOM manipulates the code) - Components
 JS - Imperative (You have write all the code to create a DOM)
 Babel - JS compiler - translates older version of JS code into new version 
 
@@ -45,5 +45,7 @@ Project:
     >cd <appname>
     >npm start //connects to development server
 
-
+Functional Components
+    Components are reusable piece of code. They are nothing but JS functions.
+    In React, every concept is written as a seperate component and combined together to buid an UI
 
