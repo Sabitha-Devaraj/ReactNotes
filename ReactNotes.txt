@@ -1,0 +1,49 @@
+React- JS Library - Declarative (ReactDOM manipulates the code)
+JS - Imperative (You have write all the code to create a DOM)
+Babel - JS compiler - translates older version of JS code into new version 
+
+Setup:
+    Install Node.js - JS runtime for serverside programming
+        >sudo apt install nodejs
+        >node -v
+        v10.19.0
+
+    Latest version was not installed while executing this command. To get the lastest version of node I did:
+        >sudo npm cache clean -f
+        >sudo npm install -g n
+        >sudo n latest
+        >node -v
+        v21.4.0
+
+
+    Install npm - Nodejs package manager - allows you to install modules and packages to use with Node.js
+        >sudo apt install npm
+        >npm -v
+        6.14.4
+
+    After installing latest version using the above commands
+        >npm -v
+        10.2.4
+
+
+    Install Visual Studio Code
+
+    Add React Developer Tools to Chrome
+        Go to Chrome Web Store-> Search React Developer Tools -> Add to Chrome
+
+Working with Visual Studio Code:
+    Install ES7+ React Extension - Go to Extension-> Search ES7 react -> Install
+
+    Enable Emmet to inlcuce the languages that are not supported by default - Go to File->Preferences->Online Services Settings->Search emmet
+        Add javascript to key and javascriptreact to value
+
+Project:
+1. Open folder to workspace
+2. Open terminal
+3. create react app
+    >npx create-react-app <appname> //name should not have capital letters
+    >cd <appname>
+    >npm start //connects to development server
+
+
+
