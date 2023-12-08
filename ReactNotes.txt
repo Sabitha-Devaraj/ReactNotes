@@ -49,3 +49,13 @@ Functional Components
     Components are reusable piece of code. They are nothing but JS functions.
     In React, every concept is written as a seperate component and combined together to buid an UI
 
+Styling
+    It is a good practice to have seperate css for each component. It will be helpful in case of big projects.
+
+ClickEvents
+    Anonymous function - use this while calling a function in the attribute as the function will be called only on a event. If not the function will be executed on page load
+    <button onClick={(e)=>handleClick(e)}>Click Here</button>
+
+UseState
+    Its the React way of thinking. To display the result of an event without reloading the enitre page.
+
