@@ -56,6 +56,37 @@ ClickEvents
     Anonymous function - use this while calling a function in the attribute as the function will be called only on a event. If not the function will be executed on page load
     <button onClick={(e)=>handleClick(e)}>Click Here</button>
 
-UseState
+Hook (https://react.dev/reference/react/hooks)
+    Hooks are built-in React functions that let you use different React features from function component(cannot be written in class) and at top level(not inside loop, conditions and nested functions).
     Its the React way of thinking. To display the result of an event without reloading the enitre page.
+    
+Different types of Hooks
+    1. State Hooks - lets a component remember information like user input. eg. a form component can store user input using state hook.
+        useState - declares a state variable that you can update directly
+        useReducer - declares a state variable that with update logic inside a reducer function
+    2. Ref Hooks
+    3. Effect Hooks
+    4. Context Hooks
+    5. Performance Hooks
+    6. Resource Hooks
+    
+
+useState Hook Sample code
+
+    const Hook = () => {
+
+        const [count, setCount] = useState(1); //returns a stateful value(count) and a function(setCount) to update it.
+
+        function incrementCount(){
+            setCount(count + 1)
+        }
+
+        return (
+            <main>
+                <button onClick={()=>setCount(count - 1)}>-</button>
+                <span>{count}</span>
+                <button onClick={incrementCount}>+</button>
+            </main>
+        )
+    }
 
