@@ -90,3 +90,20 @@ useState Hook Sample code
         )
     }
 
+List and Keys (https://legacy.reactjs.org/docs/lists-and-keys.html)
+Keys help react to identify which items have changed.
+    map and filter - higher end functions
+        - map creates a new array populated with results of calling a provided function on every element in the parent/ calling array
+
+            const numbers = [1,2,3,4,5]
+            const num = numbers.map((n) => n * 2) // function: n * 2 
+            console.log(num) // Array [2,4,6,8,10]
+       
+       - filter creates a shallow copy of a given array with just the elements that pass the test implemented by the provided function
+            const numbers = [1,2,3,4,5]
+            const num = numbers.filter((n) => n > 2)
+            onsole.log(num) // Array [3,4,5]
+
+    <li> list should have key attribute to control the state of element.
+
+React Icons - go to npm js in browser and search for react icon to get required icons
