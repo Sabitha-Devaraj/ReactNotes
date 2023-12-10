@@ -107,3 +107,28 @@ Keys help react to identify which items have changed.
     <li> list should have key attribute to control the state of element.
 
 React Icons - go to npm js in browser and search for react icon to get required icons
+
+Web Storage API 
+    session Storage - object stores data that persists only for that one session and expires when the user closes that browser tab or window. This does not disapper on the reload of a website
+
+    localStorage - object stores data without expiration, even when the user closes the browser tab or window. Browsers do not clean them automatically. Data is lost only when the Javascript clears the content or when the browser's cache is cleared.
+    Both are properties of global window object
+
+    built-in interfaces
+    1. setItem() 2.getItem() 3. removeItem(), 4. key(), 5. length, 6. clear()
+
+    localStorage.setItem("todo-list",JSON.stringify(listItems)) //accepts 2 strings as argument
+    todo-list - storage object
+    2nd arg - serialized object 
+
+    serialization - converting javascript object into JSON, so it can be stored in webstorage object.
+    deserialization - converting JSON text to javascript object
+
+    JSON is a text format of interchanging data between client and server.
+    JSON object is a global object containing methods to serialize (stringify) and deserialize (parse)
+
+Props and Props drilling
+
+    props - are arguments that are passed into components via HTML attributes. Parent component passes some information to child component using props.
+    Passing on this info from parents to child is called drilling.
+    
