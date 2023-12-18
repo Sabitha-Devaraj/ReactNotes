@@ -62,12 +62,25 @@ Hook (https://react.dev/reference/react/hooks)
     
 Different types of Hooks
     1. State Hooks - lets a component remember information like user input. eg. a form component can store user input using state hook.
-        useState - declares a state variable that you can update directly
+        useState - declares a state variable that you can update directly (returns a stateful value and a function to update it)
         useReducer - declares a state variable that with update logic inside a reducer function
-    2. Ref Hooks
-    3. Effect Hooks
+
+    2. Ref Hooks - lets a component hold some information that is not used for rendering (like DOM node or timeout ID). Updating ref does not re render your component. Also known as "escape hatch" from react paradigm
+        useRef - holds some value, most often DOM node
+        useImperativeHandle - lets you customize the ref exposed by your component. It is rarely used.
+    
+    3. Effect Hooks - Lets a component connect to and synchronize with the external system like network, browser DOM, animations, APIs etc. It is activated by default after the first render and each time the state changes.
+        useEffect - connects a component to an external system
+        Do not use this hook if you are not connecting to an external system.
+
+        useEffect(() => {
+            firstparam-effect //connect to external system
+        }, [//second param-dependencies - refer to the state chaange to be handled])
+    
     4. Context Hooks
+
     5. Performance Hooks
+
     6. Resource Hooks
     
 
@@ -132,3 +145,15 @@ Props and Props drilling
     props - are arguments that are passed into components via HTML attributes. Parent component passes some information to child component using props.
     Passing on this info from parents to child is called drilling.
     
+UseRef Hook
+    Lets a component hold information that is not used for re-rendering.
+    Used this Hook in to-do list application to set focus back to AddItem input field after clicking the add button. Previously the focus was retained in the button.
+
+    import {useRef} from 'react'
+    const {inputRef} = useRef()
+
+    create a ref in the input field
+    ref = {inputRef}
+
+    use the hook in the button
+    inputRef.current.focus (current refers to the ref created in input field)

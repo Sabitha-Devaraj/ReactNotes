@@ -1,0 +1,37 @@
+/*import { useState } from 'react';
+import './App.css';
+import Content from './Content';
+
+
+function App() {
+
+  const [color,setNewColor] = useState('')
+
+ // const [hexCode, setHexCode] = useState('')
+
+    const toHex = require('colornames')
+    const hexCode = toHex(color)
+   // setNewColor('')
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault()
+   
+   
+   // setHexCode(hexCode)
+
+   }
+  
+  return (
+   <div>
+      <Content
+        color = {color}
+        setNewColor = {setNewColor}
+        handleSubmit = {handleSubmit}
+        hexCode = {hexCode}
+      />
+   </div>
+  );
+}
+
+export default App;
