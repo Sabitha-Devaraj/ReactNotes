@@ -157,3 +157,30 @@ UseRef Hook
 
     use the hook in the button
     inputRef.current.focus (current refers to the ref created in input field)
+
+Fetch API
+    Javascript API that allows scripts to make a HTTP request to a external data source. 
+    This API returns the data as promises.
+    Promise is an object that represents an asynchronous operation.
+    Before promise, callbacks and events were used leading to unmanageable code due to multiple callback hell.
+    It is a value that will be resolved in the future.
+    Outcome is either fulfillment (success) and its associated value or rejection (failure) and an associated reason.
+
+REST API is that datasource. It allows you to interact with any kind of server over HTTP
+
+Web API lets you interact with web server through HTTP
+
+Analogy: Fetch API is a bus while REST API is a bus stop.
+
+
+    using npx while installation doesn't create any dependencies in the project modules.
+    Use npm if you need to create dependencies
+
+    Run the below command in new terminal 
+        npx json-server -p 3500 -w data/db.json
+
+    This command launches a server with data from db.json. This will be considered as a server for our practice. We will use API to make a request to this server.
+
+    The request can be - GET/ POST(insert)/ FETCH(update)/ DELETE
+
+
