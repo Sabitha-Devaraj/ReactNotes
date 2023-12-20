@@ -166,7 +166,7 @@ Fetch API
     It is a value that will be resolved in the future.
     Outcome is either fulfillment (success) and its associated value or rejection (failure) and an associated reason.
 
-REST API is that datasource. It allows you to interact with any kind of server over HTTP
+REST (Representational State Transfer) API is that datasource. It allows you to interact with any kind of server over HTTP.
 
 Web API lets you interact with web server through HTTP
 
@@ -181,6 +181,27 @@ Analogy: Fetch API is a bus while REST API is a bus stop.
 
     This command launches a server with data from db.json. This will be considered as a server for our practice. We will use API to make a request to this server.
 
-    The request can be - GET/ POST(insert)/ FETCH(update)/ DELETE
+    The request can be - GET/ POST(insert)/ PATCH(update)/ DELETE
+
+AXIOS 
+    1.  Promise based HTTP client.
+    2. It is a Javascript library to do HTTP request from web browser or Node.js server
+    3. It is better to use Axios than Fetch API when you need a simpler way to work with the response data as it automatically parses the response and returns the data directly (returns the response as JSON).
+    While in Fetch, you have to convert the data (returned as promised) to JSON.
+    4. It has XSRF (Cross-Site Request Forgery) protection while fetch does not.
+    5. It allows cancelling request and request timeout but fetch does not allow.
+
+Axios is used for small to mid sized applications and when you need to request data from a single API endpoint.
+
+GRAPHQL is used for larger applications and when you need to request data from multiple sources. It is an API Query Language that defines specifications of how the client should request data fromt the remote server. Use GRAPHQL in your API calls without relaying on the server side application to define the request.
+
+
+CRUD operations
+    It is an important concept in react as it allows you to organize and manag the data across the web application.
+
+    Create - create a table row/ add data to web page/ add content
+    Read - Read or retrieve data from web page
+    Update - Update or edit exisitng data in the web page
+    Delete - Delete exisitng data from the web page
 
 
