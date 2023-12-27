@@ -134,7 +134,7 @@ Web Storage API
     todo-list - storage object
     2nd arg - serialized object 
 
-    serialization - converting javascript object into JSON, so it can be stored in webstorage object.
+    serialization - converting javascript object into JSON text, so it can be stored in webstorage object.
     deserialization - converting JSON text to javascript object
 
     JSON is a text format of interchanging data between client and server.
@@ -205,3 +205,21 @@ CRUD operations
     Delete - Delete exisitng data from the web page
 
 
+React Router v6
+    It enables client side routing.
+    In traditional websites, browser makes a request for a dcoument fromt the server, downloads and evaluates the CSS and Javascript and renders the HTML from the server.
+    When the user makes a new click, requesting another document from the server, browser needs to do the process all over again which is time consuming as it needs to re evaluate CSS and Javascript.
+    Instead, client side rounting allows your app to update the URL with  link click and render the new UI and data using fetch without making another request for the document.
+
+Install Router dom: 
+    npm i react-router-dom -S
+
+BrowserRouter
+    It stores the current location in the browsers address bar using clean URL and navigates using the browsers built in history stack
+    Place your entire <App/> under <BrowserRouter> in index.js
+    Configure your application to run underneath a specific basename in the URL:
+       Do this in App.js return ()
+            <Routes>
+                <Route path="/" element ={}> //this path refers to index.js by default
+            </Routes>
+        
