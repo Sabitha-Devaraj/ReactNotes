@@ -1,6 +1,7 @@
 React- JS Library - Declarative (ReactDOM manipulates the code) - Components
 JS - Imperative (You have write all the code to create a DOM)
 Babel - JS compiler - translates older version of JS code into new version 
+        JSX is not a valid JS code. Babel transplies JSX into a valid JS code to be compiled by the JS complier.
 
 Setup:
     Install Node.js - JS runtime for serverside programming
@@ -45,7 +46,22 @@ Project:
     >cd <appname>
     >npm start //connects to development server
 
+ReactDOM - rendereing API that renders JSX directly to the HTML DOM
+
+How JSX is different from HTML
+    1. className are not defined as class as it is a reserved word in JS. (Use camelCase for events as well)
+    2. JSX uses self closing tag and must be closed. eg: <br /> and not <br> as used in HTML
+
 Functional Components
+    There are 2 ways to create React Components:
+        1. Using JS functions - creates a stateless Functional Component
+
+            A stateless functional component is any function you write which accepts props and returns JSX. 
+    
+        2. A stateless component, on the other hand, is a class that extends React.Component, but does not use internal state (covered in the next challenge). 
+    
+    A stateful component is a class component that does maintain its own internal state. Stateful components referred to simply as components or React components.
+
     Components are reusable piece of code. They are nothing but JS functions.
     In React, every concept is written as a seperate component and combined together to buid an UI
 
@@ -184,16 +200,20 @@ Analogy: Fetch API is a bus while REST API is a bus stop.
     The request can be - GET/ POST(insert)/ PATCH(update)/ DELETE
 
 AXIOS 
-    1.  Promise based HTTP client.
+    1. Promise based HTTP client.
     2. It is a Javascript library to do HTTP request from web browser or Node.js server
     3. It is better to use Axios than Fetch API when you need a simpler way to work with the response data as it automatically parses the response and returns the data directly (returns the response as JSON).
     While in Fetch, you have to convert the data (returned as promised) to JSON.
     4. It has XSRF (Cross-Site Request Forgery) protection while fetch does not.
     5. It allows cancelling request and request timeout but fetch does not allow.
 
+-> Install axios package using, npm i axios
+-> axios.create() lets you create a new instance of Axios with custom config which can be reused by all the calls using that instance.
+-> require is the other way to create instance but it doesn't allow custom config
+
 Axios is used for small to mid sized applications and when you need to request data from a single API endpoint.
 
-GRAPHQL is used for larger applications and when you need to request data from multiple sources. It is an API Query Language that defines specifications of how the client should request data fromt the remote server. Use GRAPHQL in your API calls without relaying on the server side application to define the request.
+GRAPHQL is used for larger applications and when you need to request data from multiple sources. It is an API Query Language that defines specifications of how the client should request data from the remote server. Use GRAPHQL in your API calls without relaying on the server side application to define the request.
 
 
 CRUD operations
@@ -205,7 +225,7 @@ CRUD operations
     Delete - Delete exisitng data from the web page
 
 
-React Router v6
+React Router v6 (https://reactrouter.com/en/main)
     It enables client side routing.
     In traditional websites, browser makes a request for a dcoument fromt the server, downloads and evaluates the CSS and Javascript and renders the HTML from the server.
     When the user makes a new click, requesting another document from the server, browser needs to do the process all over again which is time consuming as it needs to re evaluate CSS and Javascript.
@@ -214,12 +234,62 @@ React Router v6
 Install Router dom: 
     npm i react-router-dom -S
 
-BrowserRouter
+<BrowserRouter>
     It stores the current location in the browsers address bar using clean URL and navigates using the browsers built in history stack
     Place your entire <App/> under <BrowserRouter> in index.js
+
     Configure your application to run underneath a specific basename in the URL:
        Do this in App.js return ()
             <Routes>
                 <Route path="/" element ={}> //this path refers to index.js by default
             </Routes>
-        
+
+<HashRouter>
+    Is for use in web browsers when the URL should not be sent to the server for some reason.
+    Current location is stored in the hash (#) portion of the current URL, so it is never sent to the server.
+    Do not use HashRouter unless it is absolutely required.
+
+<MemoryRouter>
+    It stores its location internally in an array, unlike Browser and Hash Routers, it isn't tied to an external source like browsers history stack.
+    This makes it ideal when you need complete control over the browsers history stack, like testing.
+
+<StaticRouter>
+    Render the react router web app in node.
+    Provides the current location via the location property
+
+<Router>
+    It is the low level interface that is shared by all the router components.
+    It is a context-provider, that provides routing information to the rest of the app
+
+<NativeRouter>
+    It is the recommended interface for running react router in the React Native app
+    React Native: combining the best parts of native development with React.
+
+
+useParams() 
+    This hook returns an object with key/value pair of dynamic params from the current URL that were matched by the <Route path>
+
+
+<Outlet>
+    This should be used in the parent route element to render their child route element. 
+    This allows the nested UI to show up when the child elements are rendered.
+
+useNavigate() Hook
+    Returns a function that lets you navigate programmatically.
+    
+    const navigate = useNavigate()
+    navigate('/')
+
+    You can specify "to" as in <Link> or give a delta value like, navigate(-1) which is equivalent to going back one page in the history.
+
+//https://github.com/gitdagray/react_context/tree/main/src
+
+LifeCycle Methods/ Hooks
+    React components have several special methods that performs some actions at specific point during the life cycle of a component.
+    This can be before they are rendered, before they update, before they receive props, before they unmount, and so on.
+    some of the main lifecycle methods: 
+    componentWillMount() - API calls and event listeners are added to this method
+    componentDidMount() 
+    shouldComponentUpdate() 
+    componentDidUpdate() 
+    componentWillUnmount()
